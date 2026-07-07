@@ -1,3 +1,17 @@
+### This folder of react library is created by : npx create-react-app "folder name to be created"
+
+
+### About the folder structure now (Note : behind the scene js hi chal rehi and we have to inject the js in html(manually) so it can run )
+- node modules => has all the dependencies that are requires to build the application(like-array.prototype)
+- gitignore => github pr kya upload hona chaida / track ya nahi
+-package-lock.json => dependencies get locked in it for this specific version 
+-.md => mark down file for the intro of project(optional)
+
+MAIN HERO => [index.html] : Sara kaam is vich hi ho reha .. mtlb chae css hai js hai libraray hai start hi itho ho rehi . So , thats why we call is " SPA " -single page application .
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

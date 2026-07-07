@@ -1,3 +1,7 @@
+### This react + vite project folder is created by : npm create vite@latest "project name"
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
