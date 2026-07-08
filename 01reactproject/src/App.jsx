@@ -5,6 +5,8 @@ import Vivek from './Vivek';
 
 function App() {
 
+const variableName ='Evaluated  expression of js code i.e. final output of js '  // Js code and to acess this variable  use the curly braces { } 
+
   return (
     
 <>     {/* This empty tag is known as fragmentation bcz jsx has rule you have to wrap a jsx component and it can return only one component . So , we wrapped all this in the fragment and it works (by even not breaking the rule of jsx ) */}
@@ -18,7 +20,7 @@ function App() {
 
     {/*  A very simple code execution in react environment (Returning html by own in second return statement of app.jsx file) */}
 
-  <h1> Hey! This is the larning of React journey </h1> {/*// this will show in webpage as like in html */}
+  <h1> Hey! This is the larning of React journey {variableName} </h1> {/*// this will show in webpage as like in html */}
 
    {/* Main folder hai app.jsx and main.jsx bssss ..... (baki teh cherry on top hai ; and note they are js . And run project mainly main.jsx vicho hunda ) */}
   </>

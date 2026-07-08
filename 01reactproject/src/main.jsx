@@ -1,13 +1,41 @@
 import { StrictMode } from 'react'
+import React from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 
-createRoot(document.getElementById('root'))
-.render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+// creating a own react element or object by using the react feature :
+
+// Method 1 : Creating a react element by using the react feature (i.e. by using the react library) and showing in the document / webpage
+const reactElement = (                                  // creating a own react element or object by using the react feature 
+  <a href="https://www.google.com" target="_blank">     {/* Proper syntax that is provided by the react creators to create a element by own ( eh ohni hi define krke dita wa syntax apni library vich is vich apa kuch ni kr ksde ) */}
+    Click me to visit google
+  </a>
 )
 
-// So , kehn da bhaav ehi hai ki kaam dohve react library same hi kr rehi - vitereact bhi and purerReact bhi sirf fark ihna hai ki bss vite neh jo simple neh testing,scripts,build etc . files download kr lei c oh is vich nhi haiii ( hence , Vite is lightweight . Altough working is same )
+
+// Method 2 : This is method provided by the react library itself to create a react element { eh banane da syntax ihna neh hi define kita wa is vich apa kuch ni kr skde .. proper ehi use krna pena }
+const reactElement2 = React.createElement(
+  'a',
+  { href: 'https://www.google.com', target: '_blank' },
+  'Click me to visit google'
+)                                 
+
+
+createRoot(document.getElementById('root'))
+.render(                                     
+
+  <StrictMode>
+    
+    <App />
+   {reactElement}           
+   {reactElement2}
+
+  
+  </StrictMode>
+)
+
+ {/* .render => is a method in the react-dom libraray that do some task . and it is defined by the creators od react */}
+{/* At the end this is a function . So , <App/> = App() */}
+    
+ 
