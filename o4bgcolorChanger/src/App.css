@@ -1,0 +1,15 @@
+.mainDiv{
+  height: 30px;
+  padding: 10px;
+ margin: 50px 100px 100px 100px ; 
+background-color:darkgray;
+border-radius: 40px;
+display: flex;
+justify-content: space-evenly;
+}
+
+.btns{
+  border-radius: 4px;
+  outline: none;
+  color: white;
+}
