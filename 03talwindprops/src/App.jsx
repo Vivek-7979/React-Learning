@@ -24,15 +24,22 @@ function App() {
   return (
     <>
    <h1 className='bg-green-400 p-10 rounded-xl'>Talwind CSS</h1>
+
+
    
-<Card channel='Vivek learnig props' passingObject={object1} passingArray={Array1} />  {/* Using the react card.jsx from component folder  */}
-                                                                                      {/* Passing the array and object inside a variable and its name in {} and it can be used }   
-<Card/> {/* Again using the card component - that is the biggest poweer of the react => reusing the components }
+{/* Using the react card.jsx from component folder  */ }
+<Card username='Vivek learnig props'  paragraphText='This is the first paragraph text using the props '
+ passingObject={object1} passingArray={Array1}
+/>                                                                           {/* Passing the array and object inside a variable and its name in {} and it can be used*/ }   
+
+
+<Card username='Second Card prop.' paragraphText='This is the parah2 text' />  {/*  Here , the property(props) ; username is passed inside the card and the username is passes inside the Card function . Real Use Case => Where this property is added in card.jsx differnt data will be for differnt card*/} 
+{/*-*/}                                                                        {/* Again using the card component - that is the biggest poweer of the react => reusing the components */}
 
 
 
 
-
+{/* NOTE : username , paragraphText , passingObject and passingArray => are the props ! */}
 
 
  
