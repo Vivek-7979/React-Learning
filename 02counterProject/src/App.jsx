@@ -15,8 +15,18 @@ const addValue = () => {                    // A f(x) that is doing some task = 
 if(counter === 20){                         // Now , the value will not go above 20
   return
 }
- setCounter(counter + 1)
- console.log(' add value clicked' , counter);
+ //                                     THIS IS A FAMOUS INTERVIEW QUESTION
+
+{/*setCounter(counter + 1)*/}                                      setCounter(prevCounter => prevCounter + 1)
+{/*setCounter(counter + 1)*/}                                      setCounter(prevCounter => prevCounter + 1)
+{/*setCounter(counter + 1)*/}                                      setCounter(prevCounter => prevCounter + 1)
+{/*setCounter(counter + 1)*/}                                      setCounter(prevCounter => prevCounter + 1)
+{/*setCounter(counter + 1)*/}                                      setCounter(prevCounter => prevCounter + 1)
+
+// Here in this ; due to the optimization                          To update it everytime . So , that 5 time same 
+// of useState it doesnot update the counter                       updation line will be executed . We have to pass 
+// 5 times but only once (by fibre algo in React)                  it in the callback ( arrow f(x)) . As , setCounter is already a callback f(x) [Internally]
+// Output : 1 -> 2 -> 3 -> 4 .....                                 Output : 1 -> 5 -> 10 -> 15 -> 20 ......
 }
 
 const removeValue = () => {
