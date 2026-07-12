@@ -2,7 +2,7 @@
 // Optimal way of generating a random strong pass ( not just a way . But OPTIMAL !)
 // learnt : useState hook , useCallback hook , useEffect hook and created a random password generator from them ...
 
-import { useCallback, useEffect, useState ,useRef } from 'react'
+import { useCallback, useEffect, useState ,useRef } from 'react' // importing all the hooks from the react 
 
 import './App.css'
 
@@ -43,23 +43,21 @@ function App() {
 
   const copyPasswordToClipboard = useCallback(() => {
     if (!password) return
-
+    
+    // This is for the better UI experience that when he/she clicks he sees that the password is selected as of now with some selection on password 
     passwordRef.current?.focus()
     passwordRef.current?.select()
     passwordRef.current?.setSelectionRange(0, password.length)
 
-    window.navigator.clipboard.writeText(password)
+    window.navigator.clipboard.writeText(password) // this line simply copies the pass to clipboard of ur device's browser [ ctrl + c ho gya matlab apne-aap ]
     setCopied(true)
 
-    setTimeout(() => {
-      setCopied(false)
-    }, 1500)
   }, [password])
 
 
   // useEffect( f(n) , [ dependencies ]) : Hook
    useEffect(() => {
-    passwordGenerator()  // It calls one time by default when the page runs / reloads . Again when lenght etc value changes it again runs 
+    passwordGenerator()                           // It calls one time by default when the page runs / reloads . Again when lenght etc value changes it again runs 
   }, [length, numberAllowed, characterAllowed])  // useEffect Dependencies : je cher-char howe tina vicho teh fir toh run kro  ( matlab passwordGenerator di value ihna pr depend kardi) ; je lenght naal cher-char kiti teh fir toh passwordGenerator method run hona , numberAllowed and charAllowed pr bhi .... 
   
 
