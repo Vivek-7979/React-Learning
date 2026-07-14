@@ -18,6 +18,7 @@ fetch(`https://latest.currency-api.pages.dev/v1/currencies/${currency}.json`)   
 .then((res) => res.json())
 .then((res) => setData(res[currency]))
 
+.catch( 'Data not found or API not working ')
 
 
 }, [currency] ) // dependency : is currency as if the Currency variable is changed or manipulated in the UI the function will run again . It depends on that ..

@@ -13,30 +13,28 @@ function App() {
   // Hooks are not HOF . Because they return some data and not another f(x) {React strictly discourages creating "Higher-Order Hooks" (hooks that dynamically return other hooks). According to the official React Rules of Hooks, Hooks must always be called statically at the top level of your component so React can track their call order consistently across re-renders. }
   
 
-const [amount , setAmount] = useState(0)    // tracking and updating the amount . State of amount is most used in inbox - component 
+const [amount , setAmount] = useState( 0 || '' )    // tracking and updating the amount . State of amount is most used in inbox - component . Defualt value is  empty strung ( This will first say it like enter amount  )
 const [from , setFrom ] = useState('usd')   // tracking and updating the from label input and updates it everywhere . This State tells from which is the currency is going to convert . 
 const [ to , setTo ] = useState('inr') 
 const [convertedAmount , setConvertedAmount ] = useState(0)
 
-const currencyInfo = useCurrencyInfo(from) // In our coustom hook we are passing the value that is from input field
+const currencyInfo = useCurrencyInfo(from) // In our coustom hook we are passing the value that is from input field [like - usd ]
 
-const options = Object.keys(currencyInfo)  // From the json data we are getting from the api . We are only taking the keys(that are inr , usd , eur , pond etc all options )
+const options = Object.keys(currencyInfo)  //[json vicho usd - di sari keys(currencies a janiyan )] From the json data we are getting from the api . We are only taking the keys(that are inr , usd , eur , pond etc all options )
 
 
 // it will give the swap feature between the currencies 
 const swap = () => {
-  const previousFrom = from
-  const previousTo = to
 
-  setFrom(previousTo)
-  setTo(previousFrom)
-  setConvertedAmount(Number(amount || 0))
-  setAmount(convertedAmount ? String(convertedAmount) : '')
+  setFrom(to)                    // from nu to krta ( usd -> inr)
+  setTo(from)                    // to nu from krta ( inr -> usd)
+  setConvertedAmount(amount)     // upar ale di amount thale likhti
+  setAmount(convertedAmount)     // thale ale di converted amount upar likhti 
 }
 
 
  const convert = () => { 
-    setConvertedAmount(amount * currencyInfo[to])   // calculating the final amount byy multiplying it with the currencyInfo( 1 usd = 80 inr )
+    setConvertedAmount((amount * currencyInfo[to]).toFixed(3)  ) //{2nd input box vich jo value auni convertedAmount => amount (upar ale input box di value) * selected crrency Info ( 80. 48645)} calculating the final amount byy multiplying it with the currencyInfo( 1 usd = 80 inr ) .  ' .toFixed(3) ' on;y gives the deciaml value upto 3 digits
   }
 
 
@@ -98,7 +96,7 @@ const swap = () => {
 
 
                     <button type="submit" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg">
-                        Convert {from.toUpperCase()} to {to.toUpperCase()}  
+                        Convert {from.toUpperCase()} to {to.toUpperCase()}  : {convertedAmount} 
                     </button>
                 </form>
             </div>

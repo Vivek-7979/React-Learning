@@ -30,7 +30,7 @@ function InputBox({     // this is the input given in the paranthsesis of the fu
 
            <label htmlFor={amountInputId} className="text-black/40 mb-2 inline-block">  {/* This the From(kehri currency vicho convert krna ) on the top left of input box */}
             
-             {label}                           {/* The selected currency displaying */}
+             {label}                           {/* 1st - from , 2nd - To  */}
          
          </label>
 
@@ -41,13 +41,13 @@ function InputBox({     // this is the input given in the paranthsesis of the fu
 
                     className="outline-none w-full bg-transparent py-1.5"
                     type="number"
-                    placeholder="Amount"
+                    placeholder="Enter Amount"
 
                     disabled={amountDisable}   // Je true hoya amountDisable teh amount ni rakh honi . But , by default eh false eh 
 
-                    value={amount}             // Input de box de andar jo value auni oh amount vicho auni [ matlab jo amount apa deni oh input field ch show honi ]
+                    value={amount}             // [ Eh auni app.jsx ale used inputbox component vicho ]Input de box de andar jo value auni oh amount vicho auni [ matlab jo amount apa deni oh input field ch show honi ]
 
-                    onChange={(e) => onAmountChange && onAmountChange(Number(e.target.value))}  /> {/* Jado event happen hona => Amount change krni input ch . Taah onAmountChange method call ho jana jihne fir toh run krna and amount calculate karni and amount jani (e.target.value) vicho amount di  */}
+                    onChange={(e) => onAmountChange && onAmountChange(Number(e.target.value))}  /> {/* [onAmountChange call ho jana ] Jado event happen hona => Amount change krni input ch . Taah onAmountChange method call ho jana jihne fir toh run krna and amount calculate karni and amount jani (e.target.value) vicho amount di  */}
 
 
             </div>
@@ -71,9 +71,9 @@ function InputBox({     // this is the input given in the paranthsesis of the fu
 
                   /{/* Inside the select feature jis vich options hundiyan . loop laga deni map method naal */}
                     {currencyOptions.map((currency) => (
-                        <option key={currency} value={currency}> {/* Options mil janiyan sariyan  */}
+                        <option key={currency} value={currency}> 
 
-                            {currency}
+                            {currency}                             {/* Options ch sariyan currency mil janiyan sariyan  */}
 
                         </option> 
                     ))}
