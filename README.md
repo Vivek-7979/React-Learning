@@ -26,3 +26,6 @@ Recocillation is the algo/process in which the virtual dom is compared and it is
   - It is not the real part of the React.js Library [ NOt the essential core part of it]
   - It is a 3rd Party Library that provides the routing feature 
   - To install it ; First go inside your Project Folder : npm install react-router-dom
+
+  ### Context API [ It is the part of React itself - not a add on ; this comes along with React library]
+  - Starting vich eh React vich tha hi nhi . But , eventually eh problem - context API and state management ihni common ho gyie ki ehni later updates vich include kr dita ihna nu bhi React library vich - React de founders neh.
