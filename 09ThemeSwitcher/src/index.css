@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+
+/* talwind css configuration dont knew by any mean so only copilot can fix it and he he fixed . */
+@custom-variant dark (&:where(.dark, .dark *));  
+
+:root {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}

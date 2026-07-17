@@ -29,3 +29,6 @@ Recocillation is the algo/process in which the virtual dom is compared and it is
 
   ### Context API [ It is the part of React itself - not a add on ; this comes along with React library]
   - Starting vich eh React vich tha hi nhi . But , eventually eh problem - context API and state management ihni common ho gyie ki ehni later updates vich include kr dita ihna nu bhi React library vich - React de founders neh.
+  - Actually it solves a problem (next.js same concept) . In which if we get some data from the API or any data in the application . It will travel through the dom and pass the data to next to next element until it reaches the final node/child(who requires data).
+  - The problem is that if the application is like - div then it has two divs . The each div again has two divs . Inside first div we have two divs and first div requires data . All the parent div have to get the data and pass to next . THE WASTES THE MEMORY , THE ELEMENT DON'T EVEN NEED THAT DATA ( means it is not a optimal way )
+  - So , CONTEXT API - Solves it . In which the main element that gets data . Stores it in Context(like - global variable) that be accessed by everyone inside it and no need of passing to each element . ELEMENT CAN DIRECTLY ACCESS IT FROM THE " CONTEXT " .
