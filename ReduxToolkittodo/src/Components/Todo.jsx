@@ -1,6 +1,5 @@
-import React from 'react'
-import { useSelector , useDispatch } from 'react-redux'
-import { removeTodo } from '../Features/Todo/todoSlice'
+import { useSelector, useDispatch } from 'react-redux'
+import { removeTodo } from '../Features/todoSlice'
 
 
 
@@ -9,14 +8,14 @@ function Todo() {
 // How to get the todos or simply display them on the webpage 
 // useSelector is just a function that gives us the feature like - we can directly access the state from the Store's data 
 
-const todos = useSelector( state => state.todods)
+const todos = useSelector((state) => state.todo.todos)
 const dispatch = useDispatch()
 
   return (
     <>
 
 
-    <div>   Todos  </div>
+    <div className='text-center mt-12'>   Todos  </div>
 
 
 {/* This is the main Core JS functionality (functionality bs ehi hai baki sab teh fancy styling haii ) */}
@@ -33,10 +32,10 @@ const dispatch = useDispatch()
 
 
 {/* THIS IS FANCY UI REST THE FUNCTIONALITY IS THE SAME [ ONLY ABOVE 5 LINES ] */}
-  <ul className="list-none">
+  <ul className="list-none ">
         {todos.map((todo) => (
           <li
-            className="mt-4 flex justify-between items-center bg-zinc-800 px-4 py-2 rounded"
+            className="mt-4 flex justify-between items-center bg-zinc-800 px-4 py-2 rounded margin-auto w-1/3 center mx-auto"
             key={todo.id}
           >
             <div className='text-white'>{todo.text}</div>

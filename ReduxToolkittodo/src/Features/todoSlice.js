@@ -1,7 +1,7 @@
 import { createSlice , nanoid } from "@reduxjs/toolkit"
 
 const initialState = {
-    todos : [ { id : 1 , text : 'Hey Bro '}]  // This tells us that how will bw the intitally the todo item will look alike [ like - what it will be having ]
+    todos : [ { id : 1 , text : '1st task '}]  // This tells us that how will bw the intitally the todo item will look alike [ like - what it will be having ]
 }
 
 
@@ -14,14 +14,14 @@ export const todoSlice = createSlice (
             // The reducer will give two values state and action . state = what data , action = what on data 
             addTodo : ( state , action ) =>{
                 const todo = {
-                    id = nanoid(),   // This pre-built function just genrates random numbers for id
-                    text : action.payload 
+                    id: nanoid(),   // This pre-built function just generates a unique id
+                    text: action.payload
                 }
                 state.todos.push(todo)
             },
 
             removeTodo: ( state , action ) => {
-                state.todo = state.todos.filter( (todo) => todo.id !== action.payload )
+                state.todos = state.todos.filter((todo) => todo.id !== action.payload)
             },
         }
     })
