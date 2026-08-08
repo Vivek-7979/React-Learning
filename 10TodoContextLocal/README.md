@@ -22,4 +22,4 @@
 5. Editing the specific to-do item 
 6. Toggle effect -> After its completion it has some CSS effects 
 7. Cool and responsive UI 
-8. Optimized and efficient Code => Performance Optimization 
+8. Optimized and efficient Code => Performance Optimizatio
